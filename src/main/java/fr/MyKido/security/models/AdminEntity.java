@@ -10,17 +10,17 @@ import jakarta.persistence.Id;
 
 @Entity
 @DiscriminatorValue("ADMIN")
-public class Admin extends UserEntity {
+public class AdminEntity extends UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String levelAccess;
     private LocalDateTime lastLogin;
 
-    public Admin() {
+    public AdminEntity() {
     }
 
-    public Admin(Integer id, String levelAccess, LocalDateTime lastLogin) {
+    public AdminEntity(Integer id, String levelAccess, LocalDateTime lastLogin) {
         this.id = id;
         this.levelAccess = levelAccess;
         this.lastLogin = lastLogin;

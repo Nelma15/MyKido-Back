@@ -8,16 +8,16 @@ import jakarta.persistence.Id;
 
 @Entity
 @DiscriminatorValue("CHILDEDUCATOR")
-public class ChildEducator extends UserEntity {
+public class ChildEducatorEntity extends UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String qualification;
 
-    public ChildEducator() {
+    public ChildEducatorEntity() {
     }
 
-    public ChildEducator(Integer id, String qualification) {
+    public ChildEducatorEntity(Integer id, String qualification) {
         this.id = id;
         this.qualification = qualification;
     }

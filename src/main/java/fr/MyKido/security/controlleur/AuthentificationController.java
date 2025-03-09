@@ -15,9 +15,9 @@ import fr.MyKido.security.dto.AuthResponseDTO;
 import fr.MyKido.security.dto.LoginDTO;
 import fr.MyKido.security.dto.RegisterDTO;
 import fr.MyKido.security.jwt.JWTGenerator;
-import fr.MyKido.security.models.Admin;
-import fr.MyKido.security.models.ChildEducator;
-import fr.MyKido.security.models.Parent;
+import fr.MyKido.security.models.AdminEntity;
+import fr.MyKido.security.models.ChildEducatorEntity;
+import fr.MyKido.security.models.ParentEntity;
 import fr.MyKido.security.models.Role;
 import fr.MyKido.security.models.UserEntity;
 import fr.MyKido.security.repository.UserRepository;
@@ -45,7 +45,7 @@ public class AuthentificationController {
             return new ResponseEntity<>("Email is already taken!", HttpStatus.BAD_REQUEST);
         }
         if (registerDto.getRole() == Role.ROLE_ADMIN) {
-            UserEntity user = new Admin();
+            UserEntity user = new AdminEntity();
             user.setEmail(registerDto.getEmail());
             user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
             user.setFirstName(registerDto.getFirstName());
@@ -55,7 +55,7 @@ public class AuthentificationController {
             userRepository.save(user);
 
         } else if (registerDto.getRole() == Role.ROLE_CHILDEDUCATOR) {
-            UserEntity user = new ChildEducator();
+            UserEntity user = new ChildEducatorEntity();
             user.setEmail(registerDto.getEmail());
             user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
             user.setFirstName(registerDto.getFirstName());
@@ -64,7 +64,7 @@ public class AuthentificationController {
             user.setRole(registerDto.getRole());
             userRepository.save(user);
         } else {
-            UserEntity user = new Parent();
+            UserEntity user = new ParentEntity();
             user.setEmail(registerDto.getEmail());
             user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
             user.setFirstName(registerDto.getFirstName());
