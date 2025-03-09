@@ -1,12 +1,16 @@
-package fr.MyKido.security.models;
+package fr.MyKido.models;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 
 @Entity
 @DiscriminatorValue("ADMIN")
@@ -16,6 +20,10 @@ public class AdminEntity extends UserEntity {
     private Integer id;
     private String levelAccess;
     private LocalDateTime lastLogin;
+    @OneToMany(mappedBy = "admin", cascade = CascadeType.ALL)
+    private List<Bill> bills;
+    @OneToOne
+    private HolidaySchedule holidaySchedule;
 
     public AdminEntity() {
     }

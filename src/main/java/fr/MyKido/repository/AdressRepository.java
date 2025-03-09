@@ -1,7 +1,7 @@
-package fr.MyKido.security.repository;
+package fr.MyKido.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import fr.MyKido.security.models.Adress;
+import fr.MyKido.models.Adress;
 public interface AdressRepository  extends JpaRepository<Adress,Integer> {
 
 }

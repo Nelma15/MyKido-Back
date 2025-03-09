@@ -1,8 +1,8 @@
-package fr.MyKido.security.repository;
+package fr.MyKido.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import fr.MyKido.security.models.ChildEducatorEntity;
+import fr.MyKido.models.ChildEducatorEntity;
 
 public interface ChildEducatorRepository  extends JpaRepository<ChildEducatorEntity,Integer> {
 

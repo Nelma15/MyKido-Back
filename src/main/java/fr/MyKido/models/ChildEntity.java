@@ -1,4 +1,4 @@
-package fr.MyKido.security.models;
+package fr.MyKido.models;
 
 import java.util.List;
 import jakarta.persistence.CascadeType;

@@ -1,4 +1,4 @@
-package fr.MyKido.security.models;
+package fr.MyKido.models;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

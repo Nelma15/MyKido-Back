@@ -1,10 +1,10 @@
-package fr.MyKido.security.repository;
+package fr.MyKido.repository;
 
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import fr.MyKido.security.models.UserEntity;
+import fr.MyKido.models.UserEntity;
 
 public interface UserRepository extends JpaRepository<UserEntity,Integer> {
 

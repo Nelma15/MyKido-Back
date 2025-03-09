@@ -1,4 +1,4 @@
-package fr.MyKido.security.models;
+package fr.MyKido.models;
 
 public enum Role {
     ROLE_ADMIN,

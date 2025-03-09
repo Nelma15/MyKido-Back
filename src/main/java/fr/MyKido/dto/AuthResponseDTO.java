@@ -1,4 +1,4 @@
-package fr.MyKido.security.dto;
+package fr.MyKido.dto;
 
 public class AuthResponseDTO {
     private String accessToken;

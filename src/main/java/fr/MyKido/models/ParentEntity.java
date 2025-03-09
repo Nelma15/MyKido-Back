@@ -1,4 +1,4 @@
-package fr.MyKido.security.models;
+package fr.MyKido.models;
 
 import java.util.List;
 
@@ -23,6 +23,8 @@ public class ParentEntity extends UserEntity{
     private Adress adress;
     @OneToMany(mappedBy = "parent",cascade = CascadeType.ALL) 
     private List<ChildEntity> children;
+    @OneToMany(mappedBy = "parent",cascade = CascadeType.ALL)
+    private List<Bill> bills;
   
 
      

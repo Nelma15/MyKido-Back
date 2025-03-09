@@ -1,25 +1,43 @@
-package fr.MyKido.security.dto;
+package fr.MyKido.models;
 
-import fr.MyKido.security.models.Role;
+import jakarta.persistence.*;
 
-public class RegisterDTO {
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE) // Une seule table pour toute la hiérarchie
+@DiscriminatorColumn(name = "USER_TYPE", discriminatorType = DiscriminatorType.STRING)
+@Table(name = "users")
+public abstract class UserEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String lastName;
     private String firstName;
     private String email;
     private String password;
     private String phone;
+    @Enumerated(EnumType.STRING)
     private Role role;
 
-    public RegisterDTO() {
+    public UserEntity() {
     }
 
-    public RegisterDTO(String lastName, String firstName, String email, String password, String phone, Role role) {
+    public UserEntity(Integer id, String lastName, String firstName, String email, String password, String phone,
+            Role role) {
+        this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
         this.email = email;
         this.password = password;
         this.phone = phone;
         this.role = role;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getLastName() {
@@ -69,9 +87,5 @@ public class RegisterDTO {
     public void setRole(Role role) {
         this.role = role;
     }
-
-    
-   
-    
 
 }
