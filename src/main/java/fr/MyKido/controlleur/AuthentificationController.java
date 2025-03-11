@@ -67,13 +67,14 @@ public class AuthentificationController {
             user.setRole(registerDto.getRole());
             userRepository.save(user);
         } else {
-            UserEntity user = new ParentEntity();
+            ParentEntity user = new ParentEntity();
             user.setEmail(registerDto.getEmail());
             user.setPassword(passwordEncoder.encode(registerDto.getPassword()));
             user.setFirstName(registerDto.getFirstName());
             user.setLastName(registerDto.getLastName());
             user.setPhone(registerDto.getPhone());
             user.setRole(registerDto.getRole());
+            user.setAdress(registerDto.getAdress());
             userRepository.save(user);
         }
 

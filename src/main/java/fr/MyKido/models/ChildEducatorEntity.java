@@ -15,7 +15,6 @@ public class ChildEducatorEntity extends UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String qualification;
     @OneToMany(mappedBy = "childEducator", cascade = CascadeType.ALL)
     private List<Activity> activities;
     @OneToMany(mappedBy = "childEducator", cascade = CascadeType.ALL)
@@ -27,7 +26,6 @@ public class ChildEducatorEntity extends UserEntity {
 
     public ChildEducatorEntity(Integer id, String qualification, List<Activity> activities, List<DailyReport> dailyReports) {
         this.id = id;
-        this.qualification = qualification;
         this.activities = activities;
         this.dailyReports = dailyReports;
     }
@@ -42,14 +40,7 @@ public class ChildEducatorEntity extends UserEntity {
     }
 
 
-    public String getQualification() {
-        return qualification;
-    }
-
-
-    public void setQualification(String qualification) {
-        this.qualification = qualification;
-    }
+    
 
 
     public List<Activity> getActivities() {

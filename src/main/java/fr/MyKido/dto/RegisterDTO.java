@@ -1,5 +1,6 @@
 package fr.MyKido.dto;
 
+import fr.MyKido.models.Adress;
 import fr.MyKido.models.Role;
 
 public class RegisterDTO {
@@ -8,19 +9,25 @@ public class RegisterDTO {
     private String email;
     private String password;
     private String phone;
+    private Adress adress;
     private Role role;
 
     public RegisterDTO() {
+    
     }
+    
 
-    public RegisterDTO(String lastName, String firstName, String email, String password, String phone, Role role) {
+    public RegisterDTO(String lastName, String firstName, String email, String password, String phone, Adress adress,
+            Role role) {
         this.lastName = lastName;
         this.firstName = firstName;
         this.email = email;
         this.password = password;
         this.phone = phone;
+        this.adress = adress;
         this.role = role;
     }
+
 
     public String getLastName() {
         return lastName;
@@ -62,6 +69,14 @@ public class RegisterDTO {
         this.phone = phone;
     }
 
+    public Adress getAdress() {
+        return adress;
+    }
+
+    public void setAdress(Adress adress) {
+        this.adress = adress;
+    }
+
     public Role getRole() {
         return role;
     }
@@ -69,9 +84,12 @@ public class RegisterDTO {
     public void setRole(Role role) {
         this.role = role;
     }
-
     
-   
+
     
 
 }
+
+
+    
+ 
