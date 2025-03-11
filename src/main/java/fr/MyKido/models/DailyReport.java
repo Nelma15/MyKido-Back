@@ -16,4 +16,33 @@ public class DailyReport {
     @ManyToOne
     private ChildEducatorEntity childEducator;
 
+    public DailyReport() {
+    }
+
+    public DailyReport(Integer id, LocalDateTime reportTime, ChildEducatorEntity childEducator) {
+        this.id = id;
+        this.reportTime = reportTime;
+        this.childEducator = childEducator;
+    }
+
+    
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+    public LocalDateTime getReportTime() {
+        return reportTime;
+    }
+    public void setReportTime(LocalDateTime reportTime) {
+        this.reportTime = reportTime;
+    }
+    public ChildEducatorEntity getChildEducator() {
+        return childEducator;
+    }
+    public void setChildEducator(ChildEducatorEntity childEducator) {
+        this.childEducator = childEducator;
+    }
+
 }

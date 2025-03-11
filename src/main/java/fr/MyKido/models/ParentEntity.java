@@ -28,13 +28,14 @@ public class ParentEntity extends UserEntity{
   
 
      
-
     public ParentEntity() {
     }
 
-    public ParentEntity(Integer id, Adress adress) {
+    public ParentEntity(Integer id, Adress adress, List<ChildEntity> children, List<Bill> bills) {
         this.id = id;
         this.adress = adress;
+        this.children = children;
+        this.bills = bills;
     }
 
     public Integer getId() {
@@ -52,4 +53,21 @@ public class ParentEntity extends UserEntity{
     public void setAdress(Adress adress) {
         this.adress = adress;
     }
+
+    public List<ChildEntity> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<ChildEntity> children) {
+        this.children = children;
+    }
+
+    public List<Bill> getBills() {
+        return bills;
+    }
+
+    public void setBills(List<Bill> bills) {
+        this.bills = bills;
+    }
+
 }

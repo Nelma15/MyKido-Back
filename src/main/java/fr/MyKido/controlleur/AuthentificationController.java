@@ -7,6 +7,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +26,7 @@ import fr.MyKido.security.jwt.JWTGenerator;
 
 @RestController
 @RequestMapping("/api/auth")
+@CrossOrigin(origins = "*")
 public class AuthentificationController {
 
     private final UserRepository userRepository;
@@ -79,7 +81,9 @@ public class AuthentificationController {
     }
 
     @PostMapping("/login")
+    @CrossOrigin(origins = "*")
     public ResponseEntity<AuthResponseDTO> login(@RequestBody LoginDTO loginDto) {
+       System.out.println(loginDto);
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginDto.getEmail(), loginDto.getPassword()));
 

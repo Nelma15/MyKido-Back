@@ -29,17 +29,14 @@ public class ChildEntity {
     public ChildEntity() {
     }
 
-    public ChildEntity(Integer id, String lastName, String firstName, String birthDate, String allergies, String notes)
-            {
+    public ChildEntity(Integer id, String lastName, String firstName, String birthDate, String allergies, String notes) {
         this.id = id;
         this.lastName = lastName;
         this.firstName = firstName;
         this.birthDate = birthDate;
         this.allergies = allergies;
         this.notes = notes;
-       
     }
-
 
     public Integer getId() {
         return id;
@@ -81,13 +78,28 @@ public class ChildEntity {
         this.allergies = allergies;
     }
 
-
     public String getNotes() {
         return notes;
     }
 
     public void setNotes(String notes) {
         this.notes = notes;
+    }
+
+    public ParentEntity getParent() {
+        return parent;
+    }
+
+    public void setParent(ParentEntity parent) {
+        this.parent = parent;
+    }
+
+    public List<Documents> getDocumments() {
+        return documments;
+    }
+
+    public void setDocumments(List<Documents> documments) {
+        this.documments = documments;
     }
 
 

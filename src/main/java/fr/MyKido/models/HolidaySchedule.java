@@ -50,6 +50,15 @@ public class HolidaySchedule {
         this.holidayEnd = holidayEnd;
     }
 
+    public AdminEntity getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(AdminEntity admin) {
+        this.admin = admin;
+    }
+
+
 
 
 }

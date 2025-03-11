@@ -18,12 +18,13 @@ public class Documents {
     public Documents() {
     }
 
-    public Documents(Integer id, String name, String type, byte[] data, String description) {
+    public Documents(Integer id, String name, String type, byte[] data, String description, ChildEntity child) {
         this.id = id;
         this.name = name;
         this.type = type;
         this.data = data;
         this.description = description;
+        this.child = child;
     }
 
     public Integer getId() {
@@ -65,6 +66,15 @@ public class Documents {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public ChildEntity getChild() {
+        return child;
+    }
+
+    public void setChild(ChildEntity child) {
+        this.child = child;
+    }
+
 
 
 }

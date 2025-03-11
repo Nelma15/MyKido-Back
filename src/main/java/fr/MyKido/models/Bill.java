@@ -29,29 +29,55 @@ public class Bill {
         this.date = date;
         this.isPaid = isPaid;
     }
+
     public int getId() {
         return id;
     }
+
     public void setId(int id) {
         this.id = id;
     }
+
     public float getAmount() {
         return amount;
     }
+
     public void setAmount(float amount) {
         this.amount = amount;
     }
+
     public LocalDate getDate() {
         return date;
     }
+
     public void setDate(LocalDate date) {
         this.date = date;
     }
+
     public boolean isPaid() {
         return isPaid;
     }
-    public void setPaid(boolean isPaid) {
-        this.isPaid = isPaid;
+
+    public void setPaid(boolean paid) {
+        isPaid = paid;
     }
+
+    public AdminEntity getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(AdminEntity admin) {
+        this.admin = admin;
+    }
+
+    public ParentEntity getParent() {
+        return parent;
+    }
+
+    public void setParent(ParentEntity parent) {
+        this.parent = parent;
+    }
+
+    
 
 }

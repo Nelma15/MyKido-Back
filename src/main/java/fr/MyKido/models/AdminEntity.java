@@ -28,10 +28,12 @@ public class AdminEntity extends UserEntity {
     public AdminEntity() {
     }
 
-    public AdminEntity(Integer id, String levelAccess, LocalDateTime lastLogin) {
+    public AdminEntity(Integer id, String levelAccess, LocalDateTime lastLogin, List<Bill> bills, HolidaySchedule holidaySchedule) {
         this.id = id;
         this.levelAccess = levelAccess;
         this.lastLogin = lastLogin;
+        this.bills = bills;
+        this.holidaySchedule = holidaySchedule;
     }
 
     public Integer getId() {
@@ -58,4 +60,21 @@ public class AdminEntity extends UserEntity {
         this.lastLogin = lastLogin;
     }
 
+    public List<Bill> getBills() {
+        return bills;
+    }
+
+    public void setBills(List<Bill> bills) {
+        this.bills = bills;
+    }
+
+    public HolidaySchedule getHolidaySchedule() {
+        return holidaySchedule;
+    }
+
+    public void setHolidaySchedule(HolidaySchedule holidaySchedule) {
+        this.holidaySchedule = holidaySchedule;
+    }
+
+    
 }

@@ -21,26 +21,60 @@ public class ChildEducatorEntity extends UserEntity {
     @OneToMany(mappedBy = "childEducator", cascade = CascadeType.ALL)
     private List<DailyReport> dailyReports;
 
+
     public ChildEducatorEntity() {
     }
 
-    public ChildEducatorEntity(Integer id, String qualification) {
+    public ChildEducatorEntity(Integer id, String qualification, List<Activity> activities, List<DailyReport> dailyReports) {
         this.id = id;
         this.qualification = qualification;
+        this.activities = activities;
+        this.dailyReports = dailyReports;
     }
 
     public Integer getId() {
         return id;
     }
+
+
     public void setId(Integer id) {
         this.id = id;
     }
+
+
     public String getQualification() {
         return qualification;
     }
+
+
     public void setQualification(String qualification) {
         this.qualification = qualification;
     }
+
+
+    public List<Activity> getActivities() {
+        return activities;
+    }
+
+
+    public void setActivities(List<Activity> activities) {
+        this.activities = activities;
+    }
+
+
+    public List<DailyReport> getDailyReports() {
+        return dailyReports;
+    }
+
+
+    public void setDailyReports(List<DailyReport> dailyReports) {
+        this.dailyReports = dailyReports;
+    }
+
+
+    
+
+   
     
 
 }
