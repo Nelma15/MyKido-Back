@@ -1,11 +1,13 @@
 package fr.MyKido.models;
 
+
 import java.util.List;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -21,9 +23,12 @@ public class ChildEntity {
     private String birthDate;
     private String allergies;
     private String notes;
+   
     @ManyToOne
+    @JoinColumn(name = "parent_id")
     private ParentEntity parent;
-      @OneToMany(mappedBy = "child",cascade = CascadeType.ALL) 
+     
+    @OneToMany(mappedBy = "child",cascade = CascadeType.ALL) 
     private List<Documents> documments;
 
     public ChildEntity() {
@@ -102,8 +107,10 @@ public class ChildEntity {
         this.documments = documments;
     }
 
-
-
-
-
 }
+
+
+
+
+
+

@@ -1,6 +1,6 @@
 package fr.MyKido.service;
-import java.util.List;
 
+import java.util.List;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -31,9 +31,5 @@ public class CustomUserDetailsService implements UserDetailsService {
     }
        
     
-    // private Collection<GrantedAuthority> mapRolesToAuthorities(List<Role> roles) {
-    // return roles.stream()
-    //         .map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
-    // }
-
+   
 }
