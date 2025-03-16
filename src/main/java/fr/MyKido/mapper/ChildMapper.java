@@ -12,6 +12,7 @@ public class ChildMapper{
      //  Convertir un Enfant en EnfantDTO
     public static ChildDTO toDTO(ChildEntity child) {
         return new ChildDTO(
+            child.getId(),
             child.getLastName(),
             child.getFirstName(),
             child.getBirthDate().toString(), 

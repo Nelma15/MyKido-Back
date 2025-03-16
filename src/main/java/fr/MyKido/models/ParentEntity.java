@@ -15,9 +15,6 @@ import jakarta.persistence.OneToOne;
 @Entity
 @DiscriminatorValue("PARENT")
 public class ParentEntity extends UserEntity{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "adress_id", referencedColumnName = "id")
     private Adress adress;
@@ -31,20 +28,12 @@ public class ParentEntity extends UserEntity{
     public ParentEntity() {
     }
 
-    public ParentEntity(Integer id, Adress adress, List<ChildEntity> children, List<Bill> bills) {
-        this.id = id;
+    public ParentEntity(Adress adress, List<ChildEntity> children, List<Bill> bills) {
         this.adress = adress;
         this.children = children;
         this.bills = bills;
     }
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Adress getAdress() {
         return adress;

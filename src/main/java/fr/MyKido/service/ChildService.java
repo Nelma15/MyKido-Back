@@ -19,21 +19,24 @@ public class ChildService {
     }
 
     //  Récupérer les enfants d'un parent
-    public List<ChildDTO> getEnfantsByParent(Integer parentId) {
+    public List<ChildDTO> getChildrenByParent(Integer parentId) {
         
         List<ChildEntity> children = childRepository.findByParentId(parentId);
         return ChildMapper.toDTOList(children);
     }
+
     public ChildDTO addChild(ChildDTO dto, ParentEntity parentEntity) {
         ChildEntity child = ChildMapper.toEntity(dto, parentEntity);
         child = childRepository.save(child);
         return ChildMapper.toDTO(child);
     }
-
-    //  Supprimer un enfant
-    public void deleteChild(Integer id) {
-        childRepository.deleteById(id);
+    public List<ChildDTO> getChildrens() {
+        
+        List<ChildEntity> children = childRepository.findAll();
+        return ChildMapper.toDTOList(children);
     }
+
+   
 
 
 }

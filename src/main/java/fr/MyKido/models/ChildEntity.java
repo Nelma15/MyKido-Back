@@ -30,6 +30,8 @@ public class ChildEntity {
      
     @OneToMany(mappedBy = "child",cascade = CascadeType.ALL) 
     private List<Documents> documments;
+    @OneToMany(mappedBy = "child",cascade = CascadeType.ALL) 
+    private List<Activity> activities;
 
     public ChildEntity() {
     }

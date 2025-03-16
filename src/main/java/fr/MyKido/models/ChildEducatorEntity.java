@@ -17,17 +17,15 @@ public class ChildEducatorEntity extends UserEntity {
     private Integer id;
     @OneToMany(mappedBy = "childEducator", cascade = CascadeType.ALL)
     private List<Activity> activities;
-    @OneToMany(mappedBy = "childEducator", cascade = CascadeType.ALL)
-    private List<DailyReport> dailyReports;
+
 
 
     public ChildEducatorEntity() {
     }
 
-    public ChildEducatorEntity(Integer id, String qualification, List<Activity> activities, List<DailyReport> dailyReports) {
+    public ChildEducatorEntity(Integer id, String qualification, List<Activity> activities) {
         this.id = id;
         this.activities = activities;
-        this.dailyReports = dailyReports;
     }
 
     public Integer getId() {
@@ -51,21 +49,5 @@ public class ChildEducatorEntity extends UserEntity {
     public void setActivities(List<Activity> activities) {
         this.activities = activities;
     }
-
-
-    public List<DailyReport> getDailyReports() {
-        return dailyReports;
-    }
-
-
-    public void setDailyReports(List<DailyReport> dailyReports) {
-        this.dailyReports = dailyReports;
-    }
-
-
-    
-
-   
-    
 
 }

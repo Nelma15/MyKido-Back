@@ -1,20 +1,30 @@
 package fr.MyKido.dto;
 
 public class ChildDTO {
-   
+    private Integer id;
     private String lastName;
     private String firstName;
     private String birthDate;
     private String allergies;
     private String notes;
     private Integer parentId;
-    public ChildDTO(String lastName, String firstName, String birthDate, String allergies, String notes) {
+    
+    public ChildDTO(Integer id,String lastName, String firstName, String birthDate, String allergies, String notes) {
+        this.id = id ;
         this.lastName = lastName;
         this.firstName = firstName;
         this.birthDate = birthDate;
         this.allergies = allergies;
         this.notes = notes;
     }
+    
+    public Integer getId() {
+        return id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public Integer getParentId() {
         return parentId;
     }
