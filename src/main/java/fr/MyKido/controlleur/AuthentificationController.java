@@ -1,5 +1,15 @@
 package fr.MyKido.controlleur;
 
+import fr.MyKido.dto.AuthResponseDTO;
+import fr.MyKido.dto.LoginDTO;
+import fr.MyKido.dto.RegisterDTO;
+import fr.MyKido.models.AdminEntity;
+import fr.MyKido.models.ChildEducatorEntity;
+import fr.MyKido.models.ParentEntity;
+import fr.MyKido.models.Role;
+import fr.MyKido.models.UserEntity;
+import fr.MyKido.repository.UserRepository;
+import fr.MyKido.security.jwt.JWTGenerator;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -12,17 +22,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import fr.MyKido.dto.AuthResponseDTO;
-import fr.MyKido.dto.LoginDTO;
-import fr.MyKido.dto.RegisterDTO;
-import fr.MyKido.models.AdminEntity;
-import fr.MyKido.models.ChildEducatorEntity;
-import fr.MyKido.models.ParentEntity;
-import fr.MyKido.models.Role;
-import fr.MyKido.models.UserEntity;
-import fr.MyKido.repository.UserRepository;
-import fr.MyKido.security.jwt.JWTGenerator;
 
 @RestController
 @RequestMapping("/api/auth")

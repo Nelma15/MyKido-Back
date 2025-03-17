@@ -1,6 +1,9 @@
 package fr.MyKido.controlleur;
 
-import java.util.List;
+import fr.MyKido.dto.ChildDTO;
+import fr.MyKido.models.ParentEntity;
+import fr.MyKido.repository.UserRepository;
+import fr.MyKido.service.ChildService;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,11 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.MyKido.dto.ChildDTO;
-import fr.MyKido.models.ParentEntity;
-import fr.MyKido.models.UserEntity;
-import fr.MyKido.repository.UserRepository;
-import fr.MyKido.service.ChildService;
+import java.util.List;
 
 
 

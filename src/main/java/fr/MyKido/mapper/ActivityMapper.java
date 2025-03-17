@@ -1,10 +1,11 @@
 package fr.MyKido.mapper;
 
-import java.util.List;
-import java.util.stream.Collectors;
 import fr.MyKido.dto.ActivityDTO;
 import fr.MyKido.models.Activity;
 import fr.MyKido.models.ChildEntity;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class ActivityMapper {
     public static ActivityDTO toDTO(Activity activity) {

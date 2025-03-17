@@ -1,5 +1,6 @@
 package fr.MyKido.security;
 
+import fr.MyKido.security.jwt.JWTAuthotificationFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -14,8 +15,6 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
-import fr.MyKido.security.jwt.JWTAuthotificationFilter;
 
 @Configuration // indique a spring que c une classe de configuration
 @EnableWebSecurity // active la sécurité Web

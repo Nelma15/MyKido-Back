@@ -1,11 +1,12 @@
 package fr.MyKido.mapper;
 
 
-import java.util.List;
-import java.util.stream.Collectors;
 import fr.MyKido.dto.ChildDTO;
 import fr.MyKido.models.ChildEntity;
 import fr.MyKido.models.ParentEntity;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 public class ChildMapper{
@@ -15,7 +16,7 @@ public class ChildMapper{
             child.getId(),
             child.getLastName(),
             child.getFirstName(),
-            child.getBirthDate().toString(), 
+            child.getBirthDate(),
             child.getAllergies(),
             child.getNotes()
         );

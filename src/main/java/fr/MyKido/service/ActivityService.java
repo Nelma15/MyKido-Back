@@ -1,14 +1,14 @@
 package fr.MyKido.service;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.springframework.stereotype.Service;
 import fr.MyKido.dto.ActivityDTO;
 import fr.MyKido.mapper.ActivityMapper;
 import fr.MyKido.models.Activity;
 import fr.MyKido.models.ChildEntity;
 import fr.MyKido.repository.ActivityRepository;
+import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class ActivityService {
