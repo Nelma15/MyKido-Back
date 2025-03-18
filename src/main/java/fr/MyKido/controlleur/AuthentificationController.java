@@ -89,8 +89,9 @@ public class AuthentificationController {
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String token = jwtGenerator.generateToken(authentication);
+        String role = authentication.getAuthorities().toArray()[0].toString();
 
-        return new ResponseEntity<>(new AuthResponseDTO(token), HttpStatus.OK);
+        return new ResponseEntity<>(new AuthResponseDTO(token,role), HttpStatus.OK);
     }
 
 }
